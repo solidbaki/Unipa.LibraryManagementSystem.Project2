@@ -54,6 +54,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -101,10 +102,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentDeletion_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            this.MinimizeBox = false;
-            this.MaximizeBox = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 
         }
 
