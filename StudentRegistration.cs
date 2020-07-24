@@ -65,23 +65,18 @@ namespace Unipa.LibraryManagementSystem.Project2
                     }
                     else
                     {
-                        var stdName = Convert.ToString(textBox1.Text);
-                        var stdNum = Convert.ToString(textBox2.Text);
-                        insertCmd.CommandText = $"INSERT INTO students VALUES( '{stdName}', '{stdNum}')";
-                        insertCmd.ExecuteNonQuery();
-
-
-                        //Read the newly inserted data:
-                        var selectCmd = connection.CreateCommand();
-                        selectCmd.CommandText = "SELECT Name,SchoolNumber FROM students";
-
-                        using (var reader = selectCmd.ExecuteReader())
+                        try
                         {
-                            while (reader.Read())
-                            {
-                                var message = reader.GetString(0) + " " + reader.GetString(1);
-                                MessageBox.Show(message); ;
-                            }
+                            var stdName = Convert.ToString(textBox1.Text);
+                            var stdNum = Convert.ToString(textBox2.Text);
+                            insertCmd.CommandText = $"INSERT INTO students VALUES( '{stdName}', '{stdNum}')";
+                            insertCmd.ExecuteNonQuery();
+                        }
+                        catch (SqliteException sqliteException)
+                        {
+                            // Exception handling for non-unique values
+                            if (sqliteException.Message.Contains("UNIQUE constraint failed"))
+                                label4.Text = "Please enter a unique student number";
                         }
 
                         transaction.Commit();

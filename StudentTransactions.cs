@@ -49,5 +49,11 @@ namespace Unipa.LibraryManagementSystem.Project2
             StudentModification.GetStudentModificationInstance.Show();
             StudentTransactions.GetStudentTransactionsInstance.Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StudentList.GetStudentListInstance.Show();
+            StudentTransactions.GetStudentTransactionsInstance.Hide();
+        }
     }
 }

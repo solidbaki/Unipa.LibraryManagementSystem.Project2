@@ -46,6 +46,7 @@ namespace Unipa.LibraryManagementSystem.Project2
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -57,21 +58,22 @@ namespace Unipa.LibraryManagementSystem.Project2
             this.button1.TabIndex = 0;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(141, 195);
+            this.label1.Location = new System.Drawing.Point(174, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 28);
+            this.label1.Size = new System.Drawing.Size(87, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Book Number";
+            this.label1.Text = "Book ID";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(300, 195);
+            this.textBox1.Location = new System.Drawing.Point(304, 181);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 27);
             this.textBox1.TabIndex = 2;
@@ -81,18 +83,28 @@ namespace Unipa.LibraryManagementSystem.Project2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(141, 63);
+            this.label2.Location = new System.Drawing.Point(217, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(410, 38);
+            this.label2.Size = new System.Drawing.Size(322, 38);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Delete Books by Book Number";
+            this.label2.Text = "Delete Book by Book ID";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(217, 257);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 28);
+            this.label3.TabIndex = 4;
             // 
             // BookDeletion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -115,5 +127,6 @@ namespace Unipa.LibraryManagementSystem.Project2
         private Label label1;
         private TextBox textBox1;
         private Label label2;
+        private Label label3;
     }
 }

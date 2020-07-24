@@ -56,25 +56,11 @@ namespace Unipa.LibraryManagementSystem.Project2
                         insertCmd.CommandText = $"DELETE FROM students WHERE SchoolNumber='{stdNum}'";
                         insertCmd.ExecuteNonQuery();
 
-
-                        //Read the newly inserted data:
-                        var selectCmd = connection.CreateCommand();
-                        selectCmd.CommandText = "SELECT Name FROM students";
-
-                        using (var reader = selectCmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                var message = reader.GetString(0);
-                                MessageBox.Show(message);
-                            }
-                        }
-
                         transaction.Commit();
                     }
 
                 }
-                //connection.Close();
+                connection.Close();
             }
         }
     }

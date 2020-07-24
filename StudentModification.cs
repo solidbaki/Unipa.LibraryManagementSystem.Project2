@@ -62,42 +62,21 @@ namespace Unipa.LibraryManagementSystem.Project2
                         var newStdNum = Convert.ToString(textBox3.Text);
                         insertCmd.CommandText = $"UPDATE students SET SchoolNumber='{newStdNum}' WHERE SchoolNumber='{currStdNum}'";
                         insertCmd.ExecuteNonQuery();
-                        //Read the newly inserted data:
-                        var selectCmd = connection.CreateCommand();
-                        selectCmd.CommandText = "SELECT Name,SchoolNumber FROM students";
-
-                        using (var reader = selectCmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                var message = reader.GetString(0) + " - " + reader.GetString(1);
-                                MessageBox.Show(message); ;
-                            }
-                        }
-                        //Test Read ends here
+                        
+                        //Warning label modified after student modification
+                        label5.Text = $"{currStdNum} modified to {newStdNum}";
                         transaction.Commit();
                     }
                     else if (textBox2.Text != "" && textBox4.Text != "" && textBox1.Text == "" && textBox3.Text == "")
-                    {   //TextBox2 filled: holds Student Number -> Student Name
+                    {   
+                        //TextBox2 filled: holds Student Number -> Student Name
                         var stdName = Convert.ToString(textBox4.Text);
                         var stdNum = Convert.ToString(textBox2.Text);
                         insertCmd.CommandText = $"UPDATE students SET Name='{stdName}' WHERE SchoolNumber='{stdNum}'";
                         insertCmd.ExecuteNonQuery();
 
-
-                        //Read the newly inserted data:
-                        var selectCmd = connection.CreateCommand();
-                        selectCmd.CommandText = "SELECT Name,SchoolNumber FROM students";
-
-                        using (var reader = selectCmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                var message = reader.GetString(0) + " - " + reader.GetString(1);
-                                MessageBox.Show(message); ;
-                            }
-                        }
-
+                        //Warning label modified after student modification
+                        label5.Text = $"Student with number {stdNum} changed his/her name to {stdName}";
                         transaction.Commit();
                     } else
                     {

@@ -63,5 +63,11 @@ namespace Unipa.LibraryManagementSystem.Project2
             BookReturn.GetBookReturnInstance.Show();
             BookTransactions.GetBookTransactionInstance.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            BookList.GetBookListInstance.Show();
+            BookTransactions.GetBookTransactionInstance.Hide();
+        }
     }
 }
