@@ -132,6 +132,7 @@ namespace Unipa.LibraryManagementSystem.Project2
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Student Registration";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentRegistration_FormClosed);
             this.Load += new System.EventHandler(this.StudentRegistration_Load);

@@ -127,13 +127,14 @@ namespace Unipa.LibraryManagementSystem.Project2
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StudentList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Student List";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentList_FormClosed);
             this.Load += new System.EventHandler(this.StudentList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            this.getStudentsFromDatabase();
+
 
         }
 

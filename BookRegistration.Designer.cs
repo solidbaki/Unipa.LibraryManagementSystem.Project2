@@ -143,6 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BookRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Book Registration";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookRegistration_FormClosed);
             this.Load += new System.EventHandler(this.BookRegistration_Load);

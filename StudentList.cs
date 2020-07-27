@@ -29,6 +29,8 @@ namespace Unipa.LibraryManagementSystem.Project2
         {
             this.MinimizeBox = false;
             this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            getStudentsFromDatabase();
 
         }
 

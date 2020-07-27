@@ -204,6 +204,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentModification";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Student Modification";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentModification_FormClosed);
             this.Load += new System.EventHandler(this.StudentModification_Load);

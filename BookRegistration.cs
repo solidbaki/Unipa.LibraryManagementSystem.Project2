@@ -63,7 +63,7 @@ namespace Unipa.LibraryManagementSystem.Project2
                         var bkName = Convert.ToString(textBox1.Text);
                         var bkAuthName = Convert.ToString(textBox2.Text);
                         var bkDesc = Convert.ToString(textBox3.Text);
-                        insertCmd.CommandText = $"INSERT INTO books(BookName,AuthorName,Description) VALUES('{bkName}','{bkAuthName}','{bkDesc}')";
+                        insertCmd.CommandText = $"INSERT INTO books(BookName,AuthorName,Description,IsAvailable) VALUES('{bkName}','{bkAuthName}','{bkDesc}',1)";
                         insertCmd.ExecuteNonQuery();
 
 

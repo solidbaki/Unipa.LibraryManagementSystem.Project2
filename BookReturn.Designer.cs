@@ -49,12 +49,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(303, 343);
+            this.button1.Location = new System.Drawing.Point(326, 342);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 53);
             this.button1.TabIndex = 0;
             this.button1.Text = "Return";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -85,12 +86,13 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 271);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 260);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 20);
+            this.label3.Size = new System.Drawing.Size(776, 41);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Warning label";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // BookReturn
             // 

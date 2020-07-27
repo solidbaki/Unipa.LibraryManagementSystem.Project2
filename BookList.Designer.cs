@@ -61,6 +61,7 @@ namespace Unipa.LibraryManagementSystem.Project2
             this.ClientSize = new System.Drawing.Size(822, 509);
             this.Controls.Add(this.label1);
             this.Name = "BookList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Book List";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookList_FormClosed);
             this.Load += new System.EventHandler(this.BookList_Load);
@@ -103,12 +104,16 @@ namespace Unipa.LibraryManagementSystem.Project2
                         }
                     }
 
-                }   catch (SqliteException ex)
+                }   
+                catch (SqliteException ex)
                 {
                     if (ex.SqliteExtendedErrorCode == 5)
                     {
                         MessageBox.Show("Database Locked");
                     }
+                    else
+                        MessageBox.Show("Database Error: " + ex.Message);
+                
                 }   connection.Close();
 
             }   return books;

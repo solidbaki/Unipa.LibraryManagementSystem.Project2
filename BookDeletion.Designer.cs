@@ -113,6 +113,7 @@ namespace Unipa.LibraryManagementSystem.Project2
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BookDeletion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Book Deletion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookDeletion_FormClosed);
             this.Load += new System.EventHandler(this.BookDeletion_Load);

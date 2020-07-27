@@ -98,6 +98,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentDeletion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System - Student Deletion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentDeletion_FormClosed);
             this.ResumeLayout(false);

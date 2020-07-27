@@ -26,12 +26,12 @@ namespace Unipa.LibraryManagementSystem.Project2
 
                 //Students Db. Table Creation
                 var createTableCmd = connection.CreateCommand();
-                createTableCmd.CommandText = "CREATE TABLE IF NOT EXISTS students(Name VARCHAR(50) NOT NULL, SchoolNumber VARCHAR(10) NOT NULL PRIMARY KEY)";
+                createTableCmd.CommandText = "CREATE TABLE IF NOT EXISTS students(Name TEXT NOT NULL, SchoolNumber TEXT NOT NULL PRIMARY KEY)";
                 createTableCmd.ExecuteNonQuery();
 
                 //Book Db. Table Creation
                 var createTableCmd2 = connection.CreateCommand();
-                createTableCmd2.CommandText = "CREATE TABLE IF NOT EXISTS books(BookName VARCHAR(50) NOT NULL, AuthorName VARCHAR(50), Description VARCHAR(50) , BookNumber INTEGER PRIMARY KEY AUTOINCREMENT)";
+                createTableCmd2.CommandText = "CREATE TABLE IF NOT EXISTS books(BookName TEXT NOT NULL, AuthorName TEXT, Description TEXT , BookNumber INTEGER PRIMARY KEY AUTOINCREMENT, IsAvailable INTEGER DEFAULT 1, DateOfLoan TEXT DEFAULT '-')";
                 createTableCmd2.ExecuteNonQuery();
 
                 
