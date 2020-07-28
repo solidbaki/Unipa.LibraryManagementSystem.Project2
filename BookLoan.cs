@@ -93,12 +93,10 @@ namespace Unipa.LibraryManagementSystem.Project2
                                     MessageBox.Show(dateOfLoan);
                                     queryCmd.CommandText = $"UPDATE books SET DateOfLoan='{dateOfLoan}' WHERE BookNumber={bkId}";
                                     queryCmd.ExecuteNonQuery();
-
-                                    transaction.Commit();
-
+                                    
                                     label4.Text = $"Book assigned : {dateOfLoan} to Student number: {stdNum}";
 
-
+                                    transaction.Commit();
                                 }
                                 else if (isAvailable.ToString() == "0")
                                     label4.Text = "Book is not available";

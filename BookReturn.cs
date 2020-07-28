@@ -49,19 +49,61 @@ namespace Unipa.LibraryManagementSystem.Project2
                             queryCmd.CommandText = $"SELECT IsAvailable FROM books WHERE BookNumber = {bkNum}";
                             var isAvailable = queryCmd.ExecuteScalar();
 
-                            queryCmd.CommandText = $"SELECT DateOfLoan FROM books WHERE BookNumber ={bkNum} ";
-                            var dtOfLoan = queryCmd.ExecuteScalar();
+                            
+                            if (isAvailable == null)
+                                label3.Text = "Book doesn't exist";
+                            else if (isAvailable.ToString() == "1")
+                                label3.Text = "Book is not borrowed";
 
-                            queryCmd.CommandText = $"SELECT DateOfLoan FROM books WHERE BookNumber ={bkNum} ";
-                            var stdName = queryCmd.ExecuteScalar();
-                            //If book is not available and date of loann not null and book exists
-
-                            if (isAvailable != null)
+                            else if (isAvailable.ToString() == "0")
                             {
+                                queryCmd.CommandText = $"SELECT DateOfLoan FROM books WHERE BookNumber={bkNum}";
 
+                                if (queryCmd.ExecuteScalar() == null)
+                                {
+
+                                    label3.Text = $"No such book exists with ID: {bkNum}";
+                                }
+                                else
+                                {
+                                    var dtOfLoan = queryCmd.ExecuteScalar().ToString();
+                                    MessageBox.Show(dtOfLoan.ToString());
+                                    string[] dtOfLoanAndStdNum = dtOfLoan.Split(" ");
+
+                                    var loanDate = dtOfLoanAndStdNum[0];
+                                    var studentNumber = dtOfLoanAndStdNum[1];
+
+                                    //Get student info
+                                    queryCmd.CommandText = $"SELECT Name FROM students WHERE SchoolNumber ={studentNumber}";
+                                    var studentName = queryCmd.ExecuteScalar().ToString();
+
+                                    //Query Check if book exists
+                                    queryCmd.CommandText = $"SELECT * FROM books WHERE BookNumber={bkNum}";
+                                    var bookInfo = queryCmd.ExecuteScalar();
+
+                                    //Get current date and get loaned date, both of them are DateTime objects
+                                    DateTime dateOfLoan = DateTime.ParseExact(loanDate, "MM.dd.yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                                    DateTime currDate = DateTime.Now;
+                                    calculateBusinessDays(dateOfLoan, currDate);
+                                   
+                                    //label3.Text = Convert.ToString(currDate.Subtract(dateOfLoan));
+                                    //MessageBox.Show(Convert.ToString(currDate.Subtract(dateOfLoan).Days));
+                                    
+                                    //Set IsAvailable = 1
+                                    //queryCmd.CommandText =  $"SET books UPDATE IsAvailable=1 WHERE BookNumber={bkNum}";
+                                    //queryCmd.ExecuteNonQuery();
+
+                                    //Set Date of Loan "-"
+                                    //queryCmd.CommandText = $"SET books UPDATE DateOfLoan='-' WHERE BookNumber={bkNum}";
+                                    //queryCmd.ExecuteNonQuery();
+
+                                    label3.Text = $"Book ID:{bkNum} returned by {studentName} at the date {currDate} loan date {dateOfLoan}";
+
+                                    if (isAvailable == null)
+                                        label3.Text = "No such book exists";
+                                }
                             }
-                            else if (isAvailable == null)
-                                label3.Text = "No such book exists";
+                           
                         }
                     }
                     catch (SqliteException ex)
@@ -79,6 +121,23 @@ namespace Unipa.LibraryManagementSystem.Project2
                 }
 
             }
+        }
+
+        public double calculateBusinessDays(DateTime start, DateTime stop)
+        {
+            int days = 0;
+            while (start <= stop)
+            {
+                if (start.DayOfWeek != DayOfWeek.Saturday && start.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    ++days;
+                }
+                start = start.AddDays(1);
+            }
+            MessageBox.Show($"There is {days} days between {start} and {stop}");
+            if (days > 10)
+                return (days - 10) * (1.5);
+            return 0;
         }
     }
 }
