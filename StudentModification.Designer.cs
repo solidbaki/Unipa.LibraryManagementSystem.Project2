@@ -57,7 +57,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(408, 324);
+            this.button1.Location = new System.Drawing.Point(409, 359);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 55);
             this.button1.TabIndex = 0;
@@ -113,12 +113,12 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(254, 293);
+            this.label4.Location = new System.Drawing.Point(26, 293);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 31);
+            this.label4.Size = new System.Drawing.Size(908, 50);
             this.label4.TabIndex = 6;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 

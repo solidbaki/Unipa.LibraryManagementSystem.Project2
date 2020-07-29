@@ -109,12 +109,12 @@ namespace Unipa.LibraryManagementSystem.Project2
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(222, 303);
+            this.label4.Location = new System.Drawing.Point(12, 292);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 28);
+            this.label4.Size = new System.Drawing.Size(776, 39);
             this.label4.TabIndex = 4;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StudentRegistration
             // 

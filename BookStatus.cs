@@ -47,7 +47,7 @@ namespace Unipa.LibraryManagementSystem.Project2
                     {
                         var queryCmd = connection.CreateCommand();
 
-                        if (textBox1.Text != null)
+                        if (textBox1.Text != "")
                         {
                             var bkId = Convert.ToInt32(textBox1.Text);
 

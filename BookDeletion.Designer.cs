@@ -52,7 +52,7 @@ namespace Unipa.LibraryManagementSystem.Project2
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(287, 318);
+            this.button1.Location = new System.Drawing.Point(292, 342);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 45);
             this.button1.TabIndex = 0;
@@ -92,12 +92,12 @@ namespace Unipa.LibraryManagementSystem.Project2
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(217, 257);
+            this.label3.Location = new System.Drawing.Point(12, 239);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 28);
+            this.label3.Size = new System.Drawing.Size(712, 59);
             this.label3.TabIndex = 4;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BookDeletion
             // 
